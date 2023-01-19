@@ -10,8 +10,9 @@ const adapter = new CivilizedPokemonAdapter(CivilizedPokemonData);
 const useCase = new CivilizedPokemonUseCase(adapter);
 const cotroller = new CivilizedPokemonController(useCase);
 
-
 civilizedPokemonRoute.post("/", cotroller.registerPokemon);
 civilizedPokemonRoute.get("/all", cotroller.listPokemons);
+civilizedPokemonRoute.get("/all/species", cotroller.listSpecies);
+
 
 export default civilizedPokemonRoute;
