@@ -5,8 +5,13 @@ const pokeApi = axios.create({
 });
 
 export default class PokeApi{
-  getAllCategories = async () => {
-    const {data} = await pokeApi.get("pokemon");
+  getAllSpecies = async () => {
+    const {data} = await pokeApi.get("pokemon?offset=0&limit=1279");
+    return data;
+  }
+
+  getAllTypes = async () => {
+    const {data} = await pokeApi.get("type");
     return data;
   }
 }
