@@ -12,3 +12,16 @@ services:
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=prueba
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=1234
+    volumes:
+      - ./mysql_data:/var/lib/mysql:rw
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
