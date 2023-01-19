@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express, {Express} from "express";
 import cors from "express";
+const corst = require("cors")
 import dbPostgresSQLInit from "./db/PostgreSQLConfig";
 import { initRoutes } from "../infrastructure/controller";
 
@@ -13,6 +14,7 @@ export class  Server{
         this.port = port;
         this.app = express();
         this.app.use(cors());
+        this.app.use(corst());
         this.app.use(express.json());
         this.connectToDatabase().then();
         initRoutes(this.app)
