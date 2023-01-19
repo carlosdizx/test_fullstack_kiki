@@ -1,7 +1,6 @@
 import "dotenv/config";
 import express, {Express} from "express";
-import dbPostgresSQLInit from "./PostgreSQLConfig";
-import dbMySQLInit from "./MySQLConfig";
+import dbPostgresSQLInit from "./db/PostgreSQLConfig";
 
 export class  Server{
     private readonly port: string;
@@ -14,8 +13,7 @@ export class  Server{
     }
 
     connectToDatabase = async () => {
-        //await dbPostgresSQLInit();
-        await dbMySQLInit();
+        await dbPostgresSQLInit();
     };
 
     listen = async (): Promise<void> => {
