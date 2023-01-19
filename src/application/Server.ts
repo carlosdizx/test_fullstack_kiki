@@ -1,6 +1,8 @@
 import "dotenv/config";
 import express, {Express} from "express";
 import dbPostgresSQLInit from "./db/PostgreSQLConfig";
+import { initRoutes } from "../infrastructure/controller";
+
 
 export class  Server{
     private readonly port: string;
@@ -10,6 +12,7 @@ export class  Server{
         this.port = port;
         this.app = express();
         this.connectToDatabase().then();
+        initRoutes(this.app)
     }
 
     connectToDatabase = async () => {
