@@ -4,14 +4,14 @@ import CivilizedPokemonData from "../../data/civilizedPokemon/CivilizedPokemonDa
 import CivilizedPokemonUseCase from "../../../domain/usecase/civilizedPokemon/CivilizedPokemonUseCase";
 import CivilizedPokemonController from "./CivilizedPokemonController";
 
-const personRoute = Router();
+const civilizedPokemonRoute = Router();
 
 const adapter = new CivilizedPokemonAdapter(CivilizedPokemonData);
 const useCase = new CivilizedPokemonUseCase(adapter);
 const cotroller = new CivilizedPokemonController(useCase);
 
 
-personRoute.post("/", cotroller.registerPokemon);
-personRoute.post("/all", cotroller.listPokemons);
+civilizedPokemonRoute.post("/", cotroller.registerPokemon);
+civilizedPokemonRoute.post("/all", cotroller.listPokemons);
 
-export default personRoute;
+export default civilizedPokemonRoute;
