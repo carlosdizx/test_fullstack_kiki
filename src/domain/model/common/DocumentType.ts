@@ -1,5 +1,5 @@
 export enum DocumentType{
-    pokeid,
-    pokedoc,
-    pokepass
+    "pokeid"="pokeid",
+    "pokedoc"="pokedoc",
+    "pokepass"="pokepass"
 }

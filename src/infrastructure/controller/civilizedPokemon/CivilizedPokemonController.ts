@@ -1,6 +1,7 @@
 import CivilizedPokemonUseCase from "../../../domain/usecase/civilizedPokemon/CivilizedPokemonUseCase";
 import { Request, Response } from "express";
 import PokeApi from "../../http/axios/PokeApi";
+import {DocumentType} from "../../../domain/model/common/DocumentType";
 const pokeapi = new PokeApi();
 
 
@@ -26,5 +27,10 @@ export default class CivilizedPokemonController {
     public  listTypes = async  (req: Request, res: Response)=> {
         const response = await pokeapi.getAllTypes();
         res.send(response.results.map(r => r = r.name));
+    }
+
+    public  listDocumentTypes = async  (req: Request, res: Response)=> {
+        const response = Object.values(DocumentType);
+        res.send(response);
     }
 }
