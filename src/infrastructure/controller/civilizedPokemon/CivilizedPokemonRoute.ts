@@ -13,6 +13,7 @@ const cotroller = new CivilizedPokemonController(useCase);
 civilizedPokemonRoute.post("/", cotroller.registerPokemon);
 civilizedPokemonRoute.get("/all", cotroller.listPokemons);
 civilizedPokemonRoute.get("/all/species", cotroller.listSpecies);
+civilizedPokemonRoute.get("/all/types", cotroller.listTypes);
 
 
 export default civilizedPokemonRoute;

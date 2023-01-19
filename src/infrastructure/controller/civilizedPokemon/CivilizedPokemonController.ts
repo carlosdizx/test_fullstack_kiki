@@ -22,4 +22,9 @@ export default class CivilizedPokemonController {
         const response = await pokeapi.getAllSpecies();
         res.send(response.results.map(r => r = r.name));
     }
+
+    public  listTypes = async  (req: Request, res: Response)=> {
+        const response = await pokeapi.getAllTypes();
+        res.send(response.results.map(r => r = r.name));
+    }
 }
