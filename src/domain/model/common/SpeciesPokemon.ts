@@ -1,7 +1,11 @@
 export default class SpeciesPokemon{
-    private readonly name: string;
+    private readonly _name: string;
 
     constructor(name: string) {
-        this.name = name;
+        this._name = name;
+    }
+
+    get name(): string {
+        return this._name;
     }
 }
