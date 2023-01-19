@@ -4,8 +4,8 @@ import {CivilizedPokemonRepository} from "../../model/civilizedPokemon/Civilized
 export default class CivilizedPokemonUseCase {
     constructor(private readonly repository: CivilizedPokemonRepository) {}
 
-    public registerPokemon = async ({name,documentNumber,typeDocument,species,type}): Promise<CivilizedPokemon> => {
-        const civilizedPokemon: CivilizedPokemon = new CivilizedPokemon(name,documentNumber,typeDocument,species,type);
+    public registerPokemon = async ({name,documentNumber, documentType,speciesPokemon,typePokemon}): Promise<CivilizedPokemon> => {
+        const civilizedPokemon: CivilizedPokemon = new CivilizedPokemon(name,documentNumber,documentType,speciesPokemon,typePokemon);
         return await this.repository.created(civilizedPokemon);
     }
 

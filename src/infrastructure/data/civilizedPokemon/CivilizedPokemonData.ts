@@ -19,8 +19,8 @@ export default class  CivilizedPokemonData{
     @Column({
         type:"enum",
         enum: DocumentType,
+        default: DocumentType.pokeid,
         name:"document_type",
-        default: DocumentType.pokedoc
     })
     documentType: DocumentType;
 

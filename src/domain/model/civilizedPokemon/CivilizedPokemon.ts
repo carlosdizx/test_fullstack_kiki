@@ -1,39 +1,17 @@
 import {DocumentType} from "../common/DocumentType";
-import SpeciesPokemon from "../common/SpeciesPokemon";
-import TypePokemon from "../common/TypePokemon";
 
 export default class CivilizedPokemon {
-    private readonly _name: string;
-    private readonly _documentNumber: string;
-    private readonly _typeDocument: DocumentType;
-    private readonly _species: SpeciesPokemon;
-    private readonly _type: TypePokemon;
+    private readonly name: string;
+    private readonly documentNumber: string;
+    private readonly documentType: DocumentType;
+    private readonly speciesPokemon: string;
+    private readonly typePokemon: string;
 
-    constructor(name: string, documentNumber: string, typeDocument: DocumentType, species: SpeciesPokemon, type: TypePokemon) {
-        this._name = name;
-        this._documentNumber = documentNumber;
-        this._typeDocument = typeDocument;
-        this._species = species;
-        this._type = type;
-    }
-
-    get name(): string {
-        return this._name;
-    }
-
-    get documentNumber(): string {
-        return this._documentNumber;
-    }
-
-    get typeDocument(): DocumentType {
-        return this._typeDocument;
-    }
-
-    get species(): SpeciesPokemon {
-        return this._species;
-    }
-
-    get type(): TypePokemon {
-        return this._type;
+    constructor(name: string, documentNumber: string, documentType: DocumentType, species: string, type: string) {
+        this.name = name;
+        this.documentNumber = documentNumber;
+        this.documentType = documentType;
+        this.speciesPokemon = species;
+        this.typePokemon = type;
     }
 }
