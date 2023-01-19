@@ -1,4 +1,5 @@
 import { DataSource } from "typeorm";
+import CivilizedPokemonData from "../../infrastructure/data/civilizedPokemon/CivilizedPokemonData";
 
 export const PostgresSQLDataSource = new DataSource({
   type: "postgres",
@@ -7,7 +8,7 @@ export const PostgresSQLDataSource = new DataSource({
   username: process.env.DB_POSTGRES_USER,
   password: process.env.DB_POSTGRES_PASSWORD,
   database: process.env.DB_POSTGRES_DATABASE,
-  entities: [],
+  entities: [CivilizedPokemonData],
 });
 
 const dbPostgresSQLInit = async () => {

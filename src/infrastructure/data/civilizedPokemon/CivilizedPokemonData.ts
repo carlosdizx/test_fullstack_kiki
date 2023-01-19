@@ -4,8 +4,6 @@ import {
     PrimaryGeneratedColumn,
 } from "typeorm";
 import {DocumentType} from "../../../domain/model/common/DocumentType";
-import SpeciesPokemon from "../../../domain/model/common/SpeciesPokemon";
-import TypePokemon from "../../../domain/model/common/TypePokemon";
 
 @Entity({name:"civilized_pokemons"})
 export default class  CivilizedPokemonData{
@@ -18,12 +16,17 @@ export default class  CivilizedPokemonData{
     @Column({name:"document_number"})
     documentNumber: string;
 
-    @Column({name:"document_type"})
+    @Column({
+        type:"enum",
+        enum: DocumentType,
+        name:"document_type",
+        default: DocumentType.pokedoc
+    })
     documentType: DocumentType;
 
     @Column({name:"species"})
-    speciesPokemon: SpeciesPokemon;
+    speciesPokemon: string;
 
     @Column({name:"type"})
-    typePokemon: TypePokemon;
+    typePokemon: string;
 }
